@@ -1,8 +1,8 @@
 // Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
-canvas.width = screen.width / 2;
-canvas.height = screen.height / 4;
+canvas.width = screen.width / 1.01;
+canvas.height = screen.height / 2;
 document.body.appendChild(canvas);
 
 // Play music
@@ -40,7 +40,7 @@ var grassImage = new Image();
 var dirtImage = new Image();
 
 // Set image sources
-backgroundImage.src = "images/background.jpg";
+backgroundImage.src = "images/large-mario-sky-background.jpg";
 playerImage.src = "images/player.png";
 obstacleImage.src = "images/obstacle.png";
 grassImage.src = "images/grass.png";
@@ -84,7 +84,7 @@ var	scoreSpeed = 1;
 var	acceleration = 0.01;
 var gravity = 0.005;
 var jumpHeight = 1;
-var	floorHeight = 5;
+var	floorHeight = 6;
 var maxObstacleHeight = 5;
 var	minSpawnTime = 500;
 
