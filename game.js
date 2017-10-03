@@ -41,10 +41,10 @@ var dirtImage = new Image();
 
 // Set image sources
 backgroundImage.src = "images/large-mario-sky-background.jpg";
-playerImage.src = "images/player.png";
-obstacleImage.src = "images/obstacle.png";
-grassImage.src = "images/grass.png";
-dirtImage.src = "images/dirt.png";
+playerImage.src = "images/goomba.png";
+obstacleImage.src = "images/mario-brick-floor.jpeg";
+grassImage.src = "images/mario-brick-floor.jpeg";
+dirtImage.src = "images/mario-brick-floor.jpeg";
 
 // On image load
 backgroundImage.onload = function () {
@@ -274,10 +274,15 @@ var checkCollisions = function(){
 		if(player.x <= (obstacles[i].x + obstacleImage.width) && player.x >= (obstacles[i].x - obstacleImage.width)
 			&& player.y <= (obstacles[i].y + obstacleImage.height) && player.y >= (obstacles[i].y - obstacleImage.height)){
 			
+			var displayScore = score - 1
+			if (score >= highScore) {
+				alert("You set the new high score! " + displayScore + "!")
+			} else {
+				alert("Great job! Your score is " + displayScore);
+			}
 			// Play hit sound effect
 			if(!muted)
 				hit.play();
-
 			reset();
 		}
 	}
