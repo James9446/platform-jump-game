@@ -1,7 +1,7 @@
 // Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
-canvas.width = screen.width / 1.01;
+canvas.width = screen.width / 1.15;
 canvas.height = screen.height / 2;
 document.body.appendChild(canvas);
 
@@ -81,9 +81,9 @@ var backgroundTiles = [];
 var speed = 3;
 var backgroundSpeed = speed / 2;
 var	scoreSpeed = 1;
-var	acceleration = 0.01;
+var	acceleration = 0.004;
 var gravity = 0.005;
-var jumpHeight = 1;
+var jumpHeight = 0.9;
 var	floorHeight = 6;
 var maxObstacleHeight = 5;
 var	minSpawnTime = 500;
@@ -281,7 +281,7 @@ var checkCollisions = function(){
 			} else {
 				alert("Great job! Your scored " + displayScore + " points!");
 			}
-			
+
 			// Play hit sound effect
 			if(!muted)
 				hit.play();
