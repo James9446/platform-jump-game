@@ -167,7 +167,7 @@ var update = function () {
 
 	// Change the high score if needed
 	if(score > highScore){
-		highScore = score;
+		highScore = score - 1;
 	}
 
 	// Deal with key presses
@@ -274,12 +274,14 @@ var checkCollisions = function(){
 		if(player.x <= (obstacles[i].x + obstacleImage.width) && player.x >= (obstacles[i].x - obstacleImage.width)
 			&& player.y <= (obstacles[i].y + obstacleImage.height) && player.y >= (obstacles[i].y - obstacleImage.height)){
 			
+			// High score and score result alerts
 			var displayScore = score - 1
 			if (score >= highScore) {
-				alert("You set the new high score! " + displayScore + "!")
+				alert("You set the new high score! " + displayScore)
 			} else {
-				alert("Great job! Your score is " + displayScore);
+				alert("Great job! Your scored " + displayScore + " points!");
 			}
+			
 			// Play hit sound effect
 			if(!muted)
 				hit.play();
