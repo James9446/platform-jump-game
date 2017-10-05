@@ -39,10 +39,36 @@ var obstacleImage = new Image();
 var grassImage = new Image();
 var dirtImage = new Image();
 
+// Obstacle block image randomly determined
+function obstacleSelect() {
+	var randonNumber = Math.floor(Math.random() * 2) + 1;
+	if ( randonNumber === 1 ) {
+		return "images/mario-block.jpg";
+	} else {
+		return "images/mario-brick-floor.jpeg"
+	} 
+} 
+
+// Player image randomly determined
+function playerSelect() {
+	var randonNumber = Math.floor(Math.random() * 5) + 1;
+	if ( randonNumber === 1 ) {
+		return "images/goomba.png";
+	} else if ( randonNumber === 2 ) {
+		return "images/mushroom.png";
+	} else if ( randonNumber === 3 ) {
+		return "images/green-shell.png";
+	} else if ( randonNumber === 4 ) {
+		return "images/shy-guy.png";
+	} else if ( randonNumber === 5 ) {
+		return "images/bullet-bill.png";
+	} 
+}
+
 // Set image sources
 backgroundImage.src = "images/large-mario-sky-background.jpg";
-playerImage.src = "images/goomba.png";
-obstacleImage.src = "images/mario-brick-floor.jpeg";
+playerImage.src = playerSelect();
+obstacleImage.src = obstacleSelect();
 grassImage.src = "images/mario-brick-floor.jpeg";
 dirtImage.src = "images/mario-brick-floor.jpeg";
 
@@ -277,9 +303,9 @@ var checkCollisions = function(){
 			// High score and score result alerts
 			var displayScore = score - 1
 			if (score >= highScore) {
-				alert("You set the new high score! " + displayScore)
+				alert("You set the new high score! " + displayScore + "\n \n Refresh the page to change character")
 			} else {
-				alert("Great job! Your scored " + displayScore + " points!");
+				alert("Great job! Your scored " + displayScore + " points!" + "\n \n Refresh the page to change character");
 			}
 
 			// Play hit sound effect
