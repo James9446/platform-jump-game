@@ -108,11 +108,11 @@ var speed = 3;
 var backgroundSpeed = speed / 2;
 var	scoreSpeed = 1;
 var	acceleration = 0.004;
-var gravity = 0.005;
+var gravity = 0.0049;
 var jumpHeight = 0.9;
 var	floorHeight = 6;
 var maxObstacleHeight = 5;
-var	minSpawnTime = 500;
+var	minSpawnTime = 400;
 
 // "Private" variables
 var startY;
@@ -182,6 +182,7 @@ var reset = function () {
 
 	// Create the background
 	createBackground();
+	// function playerSelect();
 };
 
 // Update the game
@@ -303,9 +304,9 @@ var checkCollisions = function(){
 			// High score and score result alerts
 			var displayScore = score - 1
 			if (score >= highScore) {
-				alert("You set the new high score! " + displayScore + "\n \n Refresh the page to change character")
+				alert("You set the new high score! " + displayScore + "\n \nRefresh the page to change character")
 			} else {
-				alert("Great job! Your scored " + displayScore + " points!" + "\n \n Refresh the page to change character");
+				alert("Great job! Your scored " + displayScore + " points!" + "\n \nRefresh the page to change character");
 			}
 
 			// Play hit sound effect
